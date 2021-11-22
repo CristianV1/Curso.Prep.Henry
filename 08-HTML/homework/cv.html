@@ -9,7 +9,26 @@
   </head>
   <body>
     <section id="main-section">
-    <header>
+      <nav id="nav-bar">
+        <ul>
+            <li class="nav-link button__menu">=</li>       
+          <li class="nav-link"><a href="#main-section" >Inicio</a></li>
+          <li class="nav-link"><a href="#Educacion" >Educacion</a></li>
+          <li class="nav-link"><a href="#Experiencias_laborales" >Experiencia laboral</a></li>
+          <li class="nav-link"><a href="#Hobbies" >Hobbies</a></li>                    
+        </ul>
+      </nav>
+      <div id="menu">
+        <ul>
+          <li class="nav-link button__menu" >=</li>       
+        <li class="nav-link"><a href="#main-section" >Inicio</a></li>
+        <li class="nav-link"><a href="#Educacion" >Educacion</a></li>
+        <li class="nav-link"><a href="#Experiencias_laborales" >Experiencia laboral</a></li>
+        <li class="nav-link"><a href="#Hobbies" >Hobbies</a></li>                    
+      </ul>
+      
+      </div>
+      <header>
       <div id="my-picture-holder">
       <img id="my-picture" src="../img/sam3.jpeg" />
     </div>
@@ -22,29 +41,28 @@
     </div>
     </header>
     <main>
-      <section class="section2">
+      <section id="Educacion" class="section2">
         <div class="width-div">
         <h5 class="section-title color__blue">Educacion</h5>
-        <p id="my-description">
-          actualmente estoy estudiando en la universidad de la amazonia ingenieria de sistemas
+        <p class="section-text">
+          Actualmente estoy estudiando ingenieria de sistemas  en la universidad de la Amazonia
         </p>
         <p></p>
       </div>
       </section>
       
-      <section class="section">
+      <section id="Experiencias_laborales" class="section">
         <div class="width-div">
         <h5 class="section-title color__white">Experiencias Laborales</h5>
-        <p id="my-description">
+        <p class="section-text">
           Ninguna relacionada con la programacion
         </p>
-        <p></p>
       </div>
       </section>
-      <section class="section2">
+      <section id="Hobbies" class="section2">
         <div class="width-div">
         <h5 class="section-title color__blue">Hobbies</h5>
-        <p id="my-description">
+        <p class="section-text">
           <ul class="column-holder">
             <li><strong>-</strong> juego videojuegos</li>
             <li><strong>-</strong> me gusta hacer ejercicio e ir al gym</li>
@@ -58,8 +76,8 @@
       <section class="section" id="seccion_final">
         <div class="width-div">
         <h5 class="section-title color__white">Porque estoy estudiando esta carrera</h5>
-        <p id="my-description">
-          principalmente porque en todas las ramas de la programacion, esta es la que mas me ha gustado debido a
+        <p class="section-text">
+          Principalmente porque en todas las ramas de la programacion, esta es la que mas me ha gustado debido a
            que me considero una persona creativa en algunos aspectos, por lo que el ambito del frontend me sienta 
            genial, y por la parte del backend, aunque me cuesta un poco me gusta bastante debido a que tengo
             que usar logica para darle sentido a las cosas, lo cual me llama mucho la atencion.
@@ -69,5 +87,26 @@
       </section>
     </section>
     </main>
+    <script>
+      buttonMenu =document.getElementsByClassName("button__menu");
+      navLink = document.getElementsByClassName("nav-link");
+      menu = document.getElementById("menu");
+      buttonMenu[0].onclick=()=>{
+        menu.style.display="flex";
+      }
+
+      buttonMenu[1].onclick=()=>{
+        menu.style.display="none"; 
+      }
+
+      for (let index = 0; index < navLink.length; index++) 
+      {
+        if(index!=0){
+        navLink[index].onclick = ()=>{
+          menu.style.display="none";   
+        }
+      }
+      }
+    </script>
   </body>
 </html>
